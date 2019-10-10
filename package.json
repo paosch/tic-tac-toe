@@ -12,6 +12,9 @@
   ],
   "author": "chris paola",
   "license": "ISC",
+  "engines": {
+    "node": ">=4"
+  },
   "dependencies": {
     "eslint": "^6.5.1"
   }
