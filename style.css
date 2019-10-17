@@ -2,28 +2,44 @@
 
 * {
   font-family: 'Permanent Marker', cursive;
-  background-color: teal;
+  background-color: black;
 }
 
 h1 {
+  color: orange;
   text-align: center;
 }
 
-td {
-  width: 100px;
-  height: 100px;
+.container {
+  height:100vh;
 }
 
-table {
-  margin: 50px auto;
+.board-container{
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.leftandright {
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+.board {
+  width: 600px;
+  height: 600px;
+  display:flex;
+  flex-wrap: wrap;
 }
 
-.topandbottom {
-  border-top: 5px solid black;
-  border-bottom: 5px solid black;
+.square {
+  flex-basis: 32%;
+  background: orange;
+  border: 1px black solid;
+}
+
+.reset-button {
+  text-align: center;
+  font-size: 20px;
+  color: orange;
+  border: 1px solid orange;
+  height: 45px;
+  width: 80px;
+  margin: 10px;
 }
