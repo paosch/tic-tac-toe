@@ -48,3 +48,9 @@ h1 {
     height: 300px;
   }
 }
+
+.winner {
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+}

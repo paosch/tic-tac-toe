@@ -1,12 +1,13 @@
 let character = 'O';
-const charactersArray = [
+let charactersArray = [
   [undefined, undefined, undefined],
   [undefined, undefined, undefined],
   [undefined, undefined, undefined]
 ];
+let gameOver = false;
 
 function assignCharacter(e) {
-  if (e.target.innerText) return;
+  if (e.target.innerText || gameOver) return;
   const gridPosition = e.target.getAttribute('data-grid-position').split('-');
   const [rowIndex, cellIndex] = gridPosition;
   charactersArray[rowIndex][cellIndex] = character;
@@ -24,6 +25,7 @@ function assignCharacter(e) {
 
   let winner = announceWinner();
   if (winner) {
+    gameOver = true;
     const para = document.querySelector('.winner');
     para.innerText = `"${winner}" has won the game`;
   }
@@ -57,3 +59,16 @@ const squares = document.querySelectorAll('.square');
 squares.forEach(square => {
   square.addEventListener('click', assignCharacter);
 });
+
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', reset);
+
+function reset() {
+  charactersArray = [[...Array(3)], [...Array(3)], [...Array(3)]];
+  character = 'O';
+  gameOver = false;
+  document.querySelector('.winner').innerHTML = '';
+  document.querySelectorAll('.square').forEach(square => {
+    square.innerText = '';
+  });
+}
