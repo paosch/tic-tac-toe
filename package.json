@@ -4,7 +4,8 @@
   "description": "tic-tac-toe game",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/eslint ."
+    "pretest": "node_modules/.bin/eslint .",
+    "test": "node_modules/.bin/cypress run"
   },
   "keywords": [
     "tic-tac-toe",
@@ -15,7 +16,8 @@
   "engines": {
     "node": ">=4"
   },
-  "dependencies": {
+  "devDependencies": {
+    "cypress": "^3.5.0",
     "eslint": "^6.5.1"
   }
 }
